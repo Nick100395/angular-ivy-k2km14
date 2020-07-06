@@ -1,8 +1,15 @@
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron" style="height:280px">
+    <div class="left">
     <h1>Resume/CV</h1>
     <h2>Nisarg Shah - Java Development Trainee</h2>
+    </div>
+    <div class="right">
+      <img src="https://stackblitz.com/files/angular-ivy-k2km14/github/Nick100395/angular-ivy-k2km14/master/src/app/Nisarg Shah_1.JPG" class="img" >
+    </div>
   </div>
+</div>
+<div class="container">
   <div class="panel panel-primary">
     <div class="panel-heading">Profile</div>
     <div class="panel-body">
@@ -11,7 +18,8 @@
   </div>
 </div>
 
-<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%;">
+<div class="container">
+<div class="panel panel-primary">
 <mat-toolbar color="primary">Educational Qualifications</mat-toolbar>
 
 <mat-table #table [dataSource]="dataSource" matSort *ngIf="dataSource.length > 0">
@@ -36,8 +44,10 @@
 	</ng-container>
 </mat-table>
 </div>
+</div>
 
-<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%;">
+<div class="container">
+<div class="panel panel-primary">
   <mat-toolbar color="primary">Skills & Expertise</mat-toolbar>
 
     <button mat-button [matMenuTriggerFor]="menuJava"><b>Java & Java EE</b></button>
@@ -129,9 +139,10 @@
         <button mat-menu-item>Interview skills</button>
     </mat-menu>
 </div>
+</div>
 
-
-<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%;">
+<div class="container">
+<div class="panel panel-primary">
   <mat-toolbar color="primary">Academic Projects</mat-toolbar>
   <mat-accordion>
     <mat-expansion-panel (opened)="panel1OpenState = true" (closed)="panel1OpenState = false">
@@ -192,8 +203,10 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+</div>
 
-<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%;">
+<div class="container">
+<div class="panel panel-primary">
   <mat-toolbar color="primary">Employment History</mat-toolbar>
     <mat-list>
       <mat-list-item *ngFor="let experience_past of experience_past">
@@ -211,8 +224,10 @@
       <div id="duties">{{duties_FDM}}</div>
     </mat-list>
 </div>
+</div>
+<div class="container">
 
-<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%; height:455px">
+<div class="panel panel-primary" style="height:455px">
   <mat-toolbar color="primary">FDM Training</mat-toolbar>
   <div class="java">
   <mat-sidenav-container class="example-container">
@@ -248,5 +263,5 @@
     </mat-sidenav-container>
   </div>
 </div>
+</div>
 
-<img src="src/app/Nisarg%20Shah_1.JPG">
