@@ -21,7 +21,7 @@
 <div class="container">
 <div class="panel panel-primary">
 <mat-toolbar color="primary">Educational Qualifications</mat-toolbar>
-
+<div class="example-header">
 <mat-table #table [dataSource]="dataSource" matSort *ngIf="dataSource.length > 0">
 
   <mat-header-row color="accent" *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -42,14 +42,15 @@
 		<mat-header-cell *matHeaderCellDef mat-sort-header><b>Duration</b></mat-header-cell>
 		<mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
 	</ng-container>
+  
 </mat-table>
+</div>
 </div>
 </div>
 
 <div class="container">
 <div class="panel panel-primary">
   <mat-toolbar color="primary">Skills & Expertise</mat-toolbar>
-
     <button mat-button [matMenuTriggerFor]="menuJava"><b>Java & Java EE</b></button>
     <!-- #enddocregion mat-menu-trigger-for --> 
       <mat-menu #menuJava="matMenu">
@@ -209,19 +210,19 @@
 <div class="panel panel-primary">
   <mat-toolbar color="primary">Employment History</mat-toolbar>
     <mat-list>
-      <mat-list-item *ngFor="let experience_past of experience_past">
-        <div id="position" mat-line>{{experience_past.position}}</div>
-        <div id="date" mat-line> {{experience_past.date_start | date}} - {{experience_past.date_end | date}}</div>
-      </mat-list-item>
-      <div id="duties">{{duties_TCS}}</div>
-  
-      <mat-divider></mat-divider>
-  
-      <mat-list-item *ngFor="let experience_present of experience_present">
+     <mat-list-item *ngFor="let experience_present of experience_present">
         <div id="position" mat-line>{{experience_present.position}}</div>
         <div id="date" mat-line> {{experience_present.date_start | date}} - {{experience_present.date_present}} </div>
       </mat-list-item>
       <div id="duties">{{duties_FDM}}</div>
+  
+      <mat-divider></mat-divider>
+      
+       <mat-list-item *ngFor="let experience_past of experience_past">
+        <div id="position" mat-line>{{experience_past.position}}</div>
+        <div id="date" mat-line> {{experience_past.date_start | date}} - {{experience_past.date_end | date}}</div>
+      </mat-list-item>
+      <div id="duties">{{duties_TCS}}</div>
     </mat-list>
 </div>
 </div>
@@ -266,70 +267,38 @@
 </div>
 
 <div class="container">
-<div class="panel panel-primary" style="height:600px">
+<div class="panel panel-primary">
 <mat-toolbar color="primary">Interests & Activities</mat-toolbar>
-<div>
-<div class="hobby_left">
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image1"></div>
-    <mat-card-title>Tutoring</mat-card-title>
-    <mat-card-subtitle>Mathematics</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Tutoring.jpg" alt="Photo of Tutoring">
-  <mat-card-content>
-    <p>
-      Tutoring is my passion. I worked as a Math-tutor with high school students over a year and half. I enjoy helping students with complex problems and guiding them easiest methods.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="25px">
+  <mat-card *ngFor="let member of members" fxFlex="calc(33%-25px)" fxFlex.sm="calc(50%-25px)" >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{member.title}}</mat-card-title>
+      <mat-card-subtitle>{{member.subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="member.url" alt="Photo of {{member.title}}">
+    <mat-card-content>
+      <p>
+        {{member.content}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
     <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
   </mat-card-actions>
-</mat-card>
+  </mat-card>
 </div>
-
-<div class="hobby_left">
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image2"></div>
-    <mat-card-title>Travelling</mat-card-title>
-    <mat-card-subtitle>Exploring World</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Travelling.jpg" alt="Photo of hiking">
-  <mat-card-content>
-    <p>
-     Being an outdoor person, I love travelling and exploring new places quite often. I like talking to people of different cultures to know about their interests and lifestyle in detail.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
-</div>
-
-<div class="hobby_left">
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image3"></div>
-    <mat-card-title>Solving Puzzles</mat-card-title>
-    <mat-card-subtitle>Brainstorm</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Travelling.jpg" alt="Photo of hiking">
-  <mat-card-content>
-    <p>
-     Being an outdoor person, I love travelling and exploring new places quite often. I like talking to people of different cultures to know about their interests and lifestyle in detail.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
 </div>
 </div>
 
-</div>
+<div *ngIf="users && users.length">
+  <div *ngFor="let user of users">
+    <p>{{user.name}}</p>
+  </div>
 </div>
 
+<p>
+  <button (click)="GetData()">Get</button>
+  <button (click)="ClearData()">Clear</button>
+</p>
+
+<pre>{{ users | json }}</pre>

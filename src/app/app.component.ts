@@ -1,4 +1,6 @@
 import { Component, VERSION } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 export interface experience_past {
   position: string;
@@ -24,9 +26,9 @@ export class AppComponent  {
 
   duties_FDM = 'Completed 16 weeks of training which includes SQL, UNIX, Eclipse, Git, JUnit, TDD, UML, OOP, Mockito, Maven, I/O, Multithreading, JDBC, JPA, Finance, HTML, CSS, JavaScript, JSP & Servlets, Spring Core, Spring MVC and Agile/Scrum. Worked on various projects such as interview feedback system, e-health care system, Tic-Tac-Toe game, user registration, etc. in Java. Followed scrum model for the group project and worked closely in a cross functional team to accomplish desired user stories/tasks for each sprint/iteration. Currently working to upscale AWS, Angular JS, JavaScript, and Node JS';
 
-  displayedColumns = ['Degree', 'University', 'Duration']
+  displayedColumns = ['Degree', 'University','Duration']
 
-  dataSource = [{degree:'B.Tech. - Computer Engineering',  university:'Indus University', duration:'July 2012 - June 2016',}, {degree: 'M.Eng. - Electrical & Computer Engineering', university:'Carleton University', duration:'Jan 2017 - Dec 2018'}]
+  dataSource = [{degree:'Bachelors', university:'Indus University', duration:'July 2012 - June 2016'}, {degree: 'Masters', university:'Carleton University',duration:'Jan 2017 - Dec 2018'}]
 
   panel1OpenState = false;
   panel2OpenState = false;
@@ -43,8 +45,35 @@ export class AppComponent  {
   experience_present: experience_present[] = [
     {
       position: 'Junior Software Developer - FDM Group Academy, Toronto, Canada',
-      date_start: new Date('1/4/16'),
+      date_start: new Date('2/18/16'),
       date_present: 'Present'
     }
   ];
+
+  members: {title: string, subtitle: string, content: string, url: string}[] = [
+      {title: 'Tutoring', subtitle: 'Mathematics', content: 'Tutoring is my passion. I worked as a Math-tutor with high school students over a year and half. I enjoy helping students with complex problems and guiding them easiest methods.', url: 'https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Tutoring.jpg'},
+      {title: 'Travelling', subtitle: 'Exploring World', content: 'Being an outdoor person, I love travelling and exploring new places quite often. I like talking to people of different cultures to know about their interests and lifestyle in detail.', url: 'https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Travelling.jpg'},
+      {title: 'Puzzles', subtitle: 'Brainstorm', content: 'Since I prefer dealing with new challenges daily, I like solving complex puzzles where I can brainstorm and find the most efficient and fast way to get solution using my excellent problem solving ability.', url: 'https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Puzzle1.jpg'}
+    ];
+
+
+
+  users = [];
+
+  apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+  GetData() {
+    this.http.get<any>(this.apiUrl)
+      .subscribe(data => {
+        this.users = data;
+      });
+  }
+
+  ClearData() {
+    this.users = [];
+  }
+
+  constructor(private http: HttpClient) {}
+  ngOnInit() {}
 }
+
