@@ -138,3 +138,21 @@ button {
   background-image: url('https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Tutoring_logo.png');
   background-size: cover;
 }
+
+.example-header-image2 {
+  background-image: url('https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Travelling_logo.png');
+  background-size: cover;
+}
+
+.hobby_left {
+  float:left;
+  width:33%;
+  margin-top:1%;
+  
+}
+
+.hobby_right{
+  float:right;
+  width:33%;
+  
+}
