@@ -134,7 +134,7 @@ button {
   max-width: 400px;
 }
 
-.example-header-image {
-  background-image: url('https://www.google.ca/url?sa=i&url=https%3A%2F%2Fwww.diylogo.com%2F7-tips-to-creating-an-engaging-tutoring-logo%2F&psig=AOvVaw1DW-_RC-SlGG5bi7wv4Vyx&ust=1594101649631000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjrxc35t-oCFQAAAAAdAAAAABAD');
+.example-header-image1 {
+  background-image: url('https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Tutoring_logo.png');
   background-size: cover;
 }
