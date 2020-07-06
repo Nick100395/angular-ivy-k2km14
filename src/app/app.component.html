@@ -1,0 +1,250 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Resume/CV</h1>
+    <h2>Nisarg Shah - Java Development Trainee</h2>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Profile</div>
+    <div class="panel-body">
+      <h3>{{intro}}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%;">
+<mat-toolbar color="primary">Educational Qualifications</mat-toolbar>
+
+<mat-table #table [dataSource]="dataSource" matSort *ngIf="dataSource.length > 0">
+
+  <mat-header-row color="accent" *matHeaderRowDef="displayedColumns"></mat-header-row>
+	<mat-row *matRowDef="let row; columns: displayedColumns;" (click)="row.toggle(row)">
+	</mat-row>
+
+	<ng-container matColumnDef="Degree">
+		<mat-header-cell *matHeaderCellDef mat-sort-header><b>Degree</b> </mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.degree}} </mat-cell>
+	</ng-container>
+
+	<ng-container matColumnDef="University">
+		<mat-header-cell *matHeaderCellDef mat-sort-header><b>University</b> </mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.university}} </mat-cell>
+	</ng-container>
+
+  	<ng-container matColumnDef="Duration">
+		<mat-header-cell *matHeaderCellDef mat-sort-header><b>Duration</b></mat-header-cell>
+		<mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
+	</ng-container>
+</mat-table>
+</div>
+
+<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%;">
+  <mat-toolbar color="primary">Skills & Expertise</mat-toolbar>
+
+    <button mat-button [matMenuTriggerFor]="menuJava"><b>Java & Java EE</b></button>
+    <!-- #enddocregion mat-menu-trigger-for --> 
+      <mat-menu #menuJava="matMenu">
+        <button mat-menu-item>Data Types</button>
+        <button mat-menu-item>IDEs</button>
+        <button mat-menu-item>Memeory Handling</button>
+        <button mat-menu-item>jUnit</button>
+        <button mat-menu-item>Maven</button>
+        <button mat-menu-item>Mockito</button>
+        <button mat-menu-item>Collections</button>
+        <button mat-menu-item>Generics</button>
+        <button mat-menu-item>Exception Handling</button>
+        <button mat-menu-item>I/O</button>
+        <button mat-menu-item>Garbage Collection</button>
+        <button mat-menu-item>JDBC</button>
+        <button mat-menu-item [matMenuTriggerFor]="WebTier">Web Tier</button>
+        <button mat-menu-item>Tomcat Application Sever</button>
+        <button mat-menu-item>Database Connection Pool</button>
+        <button mat-menu-item>Continuous Integration</button>
+        <button mat-menu-item [matMenuTriggerFor]="SpringMVC">Spring MVC</button>
+        <button mat-menu-item>JPA</button>
+      </mat-menu>
+    <mat-menu #WebTier="matMenu">
+      <button mat-menu-item>Servlets & JSPs</button>
+    </mat-menu>
+    <mat-menu #SpringMVC="matMenu">
+        <button mat-menu-item>Spring Core Implementation</button>
+        <button mat-menu-item>Spring AOP</button>
+    </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="menuFrontEnd"><b>Web & OOP</b></button>
+  <!-- #enddocregion mat-menu-trigger-for -->
+    <mat-menu #menuFrontEnd="matMenu">
+        <button mat-menu-item>HTML5</button>
+        <button mat-menu-item>CSS3</button>
+        <button mat-menu-item>JavaScript</button>
+        <button mat-menu-item [matMenuTriggerFor]="OOP">OOP</button>
+        <button mat-menu-item>TDD</button>
+        <button mat-menu-item>Agile </button>
+    </mat-menu>
+    <mat-menu #OOP="matMenu">
+        <button mat-menu-item>Pillars of OOP</button>
+        <button mat-menu-item>SOLID principles</button>
+        <button mat-menu-item>Design Patterns</button>
+    </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="menuSQL"><b>SQL</b></button>
+  <!-- #enddocregion mat-menu-trigger-for -->
+    <mat-menu #menuSQL="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="RDBMS">RDBMS</button>
+        <button mat-menu-item>Normalization</button>
+        <button mat-menu-item>Oracle SQL</button>
+        <button mat-menu-item>Transactions</button>
+    </mat-menu>
+    <mat-menu #RDBMS="matMenu">
+        <button mat-menu-item>ERDs</button>
+        <button mat-menu-item>DML</button>
+        <button mat-menu-item>DDL</button>
+        <button mat-menu-item>Constraints</button>
+        <button mat-menu-item>Sequences</button>
+        <button mat-menu-item>View</button>
+    </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="menuUNIX"><b>UNIX</b></button>
+  <!-- #enddocregion mat-menu-trigger-for -->
+    <mat-menu #menuUNIX="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="Admin">Linux Admin</button>
+        <button mat-menu-item>vi Editor</button>
+        <button mat-menu-item>Bash Scripting</button>
+    </mat-menu>
+    <mat-menu #Admin="matMenu">
+        <button mat-menu-item>Navigating File System</button>
+        <button mat-menu-item>File Manipulation</button>
+        <button mat-menu-item>Stream Redirection</button>
+        <button mat-menu-item>Handling Processes</button>
+    </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="menuProf"><b>Professional</b></button>
+  <!-- #enddocregion mat-menu-trigger-for -->
+    <mat-menu #menuProf="matMenu">
+        <button mat-menu-item>Effective Communication</button>
+        <button mat-menu-item>Organization</button>
+        <button mat-menu-item>Professional conduct</button>
+        <button mat-menu-item>Project Lifecycles</button>
+        <button mat-menu-item>Presentation skills</button>
+        <button mat-menu-item>Resume skills</button>
+        <button mat-menu-item>Interview skills</button>
+    </mat-menu>
+</div>
+
+
+<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%;">
+  <mat-toolbar color="primary">Academic Projects</mat-toolbar>
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panel1OpenState = true" (closed)="panel1OpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Interview Feedback System
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ panel1OpenState ? ' FDM Group Academy, May 2020 - June 2020' : ' Check for more info ' }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+          <h4>Java:</h4> Spring MVC, JPA, JSP & Servlets, SOLID principles, Exception handling, Multithreading 
+          <h4>Front end:</h4> HTML5, CSS3, JavaScript 
+          <h4>Others:</h4> Bootstrap4, Apache Tomcat Server v8.5, Oracle SQL database, Spring tool suite
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panel2OpenState = true" (closed)="panel2OpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          E-health care System
+        </mat-panel-title>
+        <mat-panel-description>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {{ panel2OpenState ? ' FDM Group Academy, April 2020 - May 2020' : ' Check for more info ' }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+         <h4>Java:</h4> JPA, JSP & Servlets, Abstract classes, Interfaces, Exception handling
+         <h4>Front end:</h4> HTML5, CSS3, JavaScript
+         <h4>Others:</h4>  Apache Tomcat Server v8.5, Oracle SQL database, Eclipse workspace
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panel3OpenState = true" (closed)="panel3OpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Tic-Tac-Toe Game
+        </mat-panel-title>
+        <mat-panel-description>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {{ panel3OpenState ? ' FDM Group Academy, April 2020 - May 2020' : ' Check for more info ' }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+         <h4>Java:</h4> MVC design pattern, Exception handling, Generics, Collections, POJOs, Constructors
+         <h4>Others:</h4> Eclipse workspace
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panel4OpenState = true" (closed)="panel4OpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Alumni Information System
+        </mat-panel-title>
+        <mat-panel-description>
+
+          {{ panel4OpenState ? ' Tata Consultancy Services, Janauary 2016 - May 2016' : ' Check for more info ' }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+         <h4>Tools & Technologies used:</h4> C#.NET, HTML, CSS, JavaScript, jQuery, SQL database
+         <h4>Others:</h4> Microsoft Visual Studio, Microsoft Visio, Microsoft Office
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%;">
+  <mat-toolbar color="primary">Employment History</mat-toolbar>
+    <mat-list>
+      <mat-list-item *ngFor="let experience_past of experience_past">
+        <div id="position" mat-line>{{experience_past.position}}</div>
+        <div id="date" mat-line> {{experience_past.date_start | date}} - {{experience_past.date_end | date}}</div>
+      </mat-list-item>
+      <div id="duties">{{duties_TCS}}</div>
+  
+      <mat-divider></mat-divider>
+  
+      <mat-list-item *ngFor="let experience_present of experience_present">
+        <div id="position" mat-line>{{experience_present.position}}</div>
+        <div id="date" mat-line> {{experience_present.date_start | date}} - {{experience_present.date_present}} </div>
+      </mat-list-item>
+      <div id="duties">{{duties_FDM}}</div>
+    </mat-list>
+</div>
+
+<div class="panel panel-primary" style="margin-left:7.8%; margin-right: 7.8%; height:455px">
+  <mat-toolbar color="primary">FDM Training</mat-toolbar>
+  <div class="java">
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>Java</mat-sidenav>
+      <mat-sidenav-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem">Java Core Fundamentals & Key Tools(Eclipse,Git)</mat-list-item>
+          <mat-list-item role="listitem"> JUnit, TDD, UML, and Object-Oriented Principles </mat-list-item>
+          <mat-list-item role="listitem">Java Core Fundamentals and Key Tools (Mockito, Maven)</mat-list-item>
+          <mat-list-item role="listitem"> Java Core (I/O, multithreading) </mat-list-item>
+          <mat-list-item role="listitem"> Data Access using JDBC, JPA </mat-list-item>
+          <mat-list-item role="listitem"> Java Web Applications on Tomcat (Servlets and JSP)  </mat-list-item>
+          <mat-list-item role="listitem"> Spring Framework(Core, AOP and Web MVC)  </mat-list-item>
+        </mat-list>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+ 
+  <div class="others">
+    <mat-sidenav-container class="example-container">
+     <mat-sidenav mode="side" opened>Others</mat-sidenav>
+      <mat-sidenav-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem"> Web Development (HTML5, CSS3, JavaScript Basics) </mat-list-item>
+          <mat-list-item role="listitem"> SQL (Tables, Joins, Subquery, Triggers, RDBMS)</mat-list-item>
+          <mat-list-item role="listitem"> Finance (CPI, Market Capitalization, TSX, Shares)</mat-list-item>
+          <mat-list-item role="listitem"> UNIX (Different commands, Bash programming)</mat-list-item>
+          <mat-list-item role="listitem"> Agile/Scrum Methodology</mat-list-item>
+          <mat-list-item role="listitem"> Professional skills (Presentation, Listening)</mat-list-item>
+          <mat-list-item role="listitem"> Solo Project & Group Project </mat-list-item>
+        </mat-list>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

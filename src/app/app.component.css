@@ -1,0 +1,116 @@
+p {
+  font-family: Lato;
+}
+
+mat-cell {
+  font-weight: bold;
+}
+
+.panel-heading {
+  font-size: 23px;
+  font-weight: bold;
+  background-color:#7B1FA2;
+  padding: 15px 0px 15px 20px;
+  font-family:Arial;
+}
+
+.mat-toolbar{
+  background-color: #7B1FA2;
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+  font-family:Arial;
+}
+
+h1{
+  text-align:center;
+}
+
+h2{
+  text-align:center;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold; 
+}
+
+h4 {
+  font-size: 15px;
+  font-weight: bold;
+}
+mat-header-cell {
+  font-size: 20px;
+  color: black;
+}
+
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-container {
+  position: absolute;
+  background: #eee;
+  padding: 0px 0px 42px 0px;
+}
+
+mat-sidenav {
+  font-size:20px;
+  font-weight: bold;
+  font-family: Arial;
+  padding: 120px 20px 0px 20px; 
+}
+
+mat-sidenav-content {
+  font-size:15px;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+.java {
+  float:left;
+  width:50%;
+}
+
+.others {
+  float:right;
+  width:50%;
+}
+
+mat-panel-title {
+  font-size:18px;
+  font-weight: bold;
+  font-family: Arial; 
+}
+
+mat-panel-description {
+  font-size:15px;
+  font-weight: bold;
+  font-family: Arial; 
+}
+
+button {
+  padding: 10px 20px 10px 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#position{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+#date{
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial;
+}
+
+#duties{
+  font-size: 15px;
+  font-family: Arial;
+  padding: 0px 20px 10px 18px;
+}
