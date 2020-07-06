@@ -58,22 +58,6 @@ export class AppComponent  {
 
 
 
-  users = [];
-
-  apiUrl = 'https://jsonplaceholder.typicode.com/users';
-
-  GetData() {
-    this.http.get<any>(this.apiUrl)
-      .subscribe(data => {
-        this.users = data;
-      });
-  }
-
-  ClearData() {
-    this.users = [];
-  }
-
-  constructor(private http: HttpClient) {}
-  ngOnInit() {}
+  
 }
 

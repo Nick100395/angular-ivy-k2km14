@@ -290,15 +290,3 @@
 </div>
 </div>
 
-<div *ngIf="users && users.length">
-  <div *ngFor="let user of users">
-    <p>{{user.name}}</p>
-  </div>
-</div>
-
-<p>
-  <button (click)="GetData()">Get</button>
-  <button (click)="ClearData()">Clear</button>
-</p>
-
-<pre>{{ users | json }}</pre>
