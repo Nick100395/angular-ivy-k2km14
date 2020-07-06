@@ -1,15 +1,18 @@
-<div class="container">
+<!-- TOP PORTION FOR NAME AND PHOTO -->
+<div class="container" style="margin-left:7.8%">
   <div class="jumbotron" style="height:280px">
     <div class="left">
     <h1>Resume/CV</h1>
     <h2>Nisarg Shah - Java Development Trainee</h2>
     </div>
     <div class="right">
-      <img src="https://stackblitz.com/files/angular-ivy-k2km14/github/Nick100395/angular-ivy-k2km14/master/src/app/Nisarg Shah_1.JPG" class="img" >
+      <img src="https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Nisarg.JPG" class="img" >
     </div>
   </div>
 </div>
-<div class="container">
+
+<!-- INTRODUCTION PART -->
+<div class="container" style="margin-left:7.8%">
   <div class="panel panel-primary">
     <div class="panel-heading">Profile</div>
     <div class="panel-body">
@@ -18,37 +21,39 @@
   </div>
 </div>
 
-<div class="container">
-<div class="panel panel-primary">
-<mat-toolbar color="primary">Educational Qualifications</mat-toolbar>
-<div class="example-header">
-<mat-table #table [dataSource]="dataSource" matSort *ngIf="dataSource.length > 0">
+<!-- EDUCATIONAL QUALIFICATIONS - TABLE & TOOLBAR -->
+<div class="container" style="margin-left:7.8%">
+  <div class="panel panel-primary">
+    <mat-toolbar color="primary">Educational Qualifications</mat-toolbar>
+      <div class="example-header">
+        <mat-table #table [dataSource]="dataSource" matSort *ngIf="dataSource.length > 0">
 
-  <mat-header-row color="accent" *matHeaderRowDef="displayedColumns"></mat-header-row>
-	<mat-row *matRowDef="let row; columns: displayedColumns;" (click)="row.toggle(row)">
-	</mat-row>
+          <mat-header-row color="accent" *matHeaderRowDef="displayedColumns"></mat-header-row>
+	        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="row.toggle(row)">
+	        </mat-row>
 
-	<ng-container matColumnDef="Degree">
-		<mat-header-cell *matHeaderCellDef mat-sort-header><b>Degree</b> </mat-header-cell>
-		<mat-cell *matCellDef="let element"> {{element.degree}} </mat-cell>
-	</ng-container>
+	        <ng-container matColumnDef="Degree">
+		        <mat-header-cell *matHeaderCellDef mat-sort-header><b>Degree</b> </mat-header-cell>
+		        <mat-cell *matCellDef="let element"> {{element.degree}} </mat-cell>
+	          </ng-container>
 
-	<ng-container matColumnDef="University">
-		<mat-header-cell *matHeaderCellDef mat-sort-header><b>University</b> </mat-header-cell>
-		<mat-cell *matCellDef="let element"> {{element.university}} </mat-cell>
-	</ng-container>
+          <ng-container matColumnDef="University">
+            <mat-header-cell *matHeaderCellDef mat-sort-header><b>University</b> </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.university}} </mat-cell>
+          </ng-container>
 
-  	<ng-container matColumnDef="Duration">
-		<mat-header-cell *matHeaderCellDef mat-sort-header><b>Duration</b></mat-header-cell>
-		<mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
-	</ng-container>
+          <ng-container matColumnDef="Duration">
+            <mat-header-cell *matHeaderCellDef mat-sort-header><b>Duration</b></mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
+          </ng-container>
   
-</mat-table>
-</div>
-</div>
+        </mat-table>
+      </div>
+  </div>
 </div>
 
-<div class="container">
+<!-- SKILLS & EXPERTISE - MENU & TOOLBAR -->
+<div class="container" style="margin-left:7.8%">
 <div class="panel panel-primary">
   <mat-toolbar color="primary">Skills & Expertise</mat-toolbar>
     <button mat-button [matMenuTriggerFor]="menuJava"><b>Java & Java EE</b></button>
@@ -142,7 +147,8 @@
 </div>
 </div>
 
-<div class="container">
+<!-- ACADEMIC PROJECTS - EXPANSION PANEL & TOOLBAR -->
+<div class="container" style="margin-left:7.8%">
 <div class="panel panel-primary">
   <mat-toolbar color="primary">Academic Projects</mat-toolbar>
   <mat-accordion>
@@ -182,7 +188,7 @@
         </mat-panel-title>
         <mat-panel-description>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          {{ panel3OpenState ? ' FDM Group Academy, April 2020 - May 2020' : ' Check for more info ' }}
+          {{ panel3OpenState ? ' FDM Group Academy, M' : ' Check for more info ' }}
         </mat-panel-description>
       </mat-expansion-panel-header>
          <h4>Java:</h4> MVC design pattern, Exception handling, Generics, Collections, POJOs, Constructors
@@ -195,7 +201,6 @@
           Alumni Information System
         </mat-panel-title>
         <mat-panel-description>
-
           {{ panel4OpenState ? ' Tata Consultancy Services, Janauary 2016 - May 2016' : ' Check for more info ' }}
         </mat-panel-description>
       </mat-expansion-panel-header>
@@ -206,7 +211,8 @@
 </div>
 </div>
 
-<div class="container">
+<!-- EMPLOYMENT HISTORY - LIST & TOOLBAR -->
+<div class="container" style="margin-left:7.8%">
 <div class="panel panel-primary">
   <mat-toolbar color="primary">Employment History</mat-toolbar>
     <mat-list>
@@ -228,6 +234,7 @@
 </div>
 <div class="container">
 
+<!--
 <div class="panel panel-primary" style="height:455px">
   <mat-toolbar color="primary">FDM Training</mat-toolbar>
   <div class="java">
@@ -265,7 +272,9 @@
   </div>
 </div>
 </div>
+-->
 
+<!-- INTERESTS & ACTIVITIES - CARD & TOOLBAR -->
 <div class="container">
 <div class="panel panel-primary">
 <mat-toolbar color="primary">Interests & Activities</mat-toolbar>
@@ -282,11 +291,22 @@
         {{member.content}}
       </p>
     </mat-card-content>
-    <mat-card-actions>
-    <button mat-button>LIKE</button>
-  </mat-card-actions>
   </mat-card>
 </div>
 </div>
 </div>
+
+<!-- API CALL FROM ANOTHER WEBSITE -->
+<div class="container">
+<div class="panel panel-primary">
+<mat-toolbar color="primary">API Call From Another Website</mat-toolbar>
+<p>
+  <button (click)="GetUserData()">Get Users</button>
+  <button (click)="ClearUserData()">Clear</button>
+</p>
+<pre>{{ users | json }}</pre>
+</div>
+</div>
+
+
 
