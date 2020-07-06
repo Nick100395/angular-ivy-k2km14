@@ -129,3 +129,12 @@ button {
   font-family: Arial;
   padding: 0px 20px 10px 18px;
 }
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://www.google.ca/url?sa=i&url=https%3A%2F%2Fwww.diylogo.com%2F7-tips-to-creating-an-engaging-tutoring-logo%2F&psig=AOvVaw1DW-_RC-SlGG5bi7wv4Vyx&ust=1594101649631000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjrxc35t-oCFQAAAAAdAAAAABAD');
+  background-size: cover;
+}

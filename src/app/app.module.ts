@@ -9,6 +9,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 
 import {HttpClientModule} from '@angular/common/http';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -23,7 +24,7 @@ import { HelloComponent } from './hello.component';
 
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule, HttpModule, HttpClientModule, MatNativeDateModule,
-    ReactiveFormsModule, MatToolbarModule, MatTableModule, MatExpansionModule, MatSidenavModule, MatListModule, MatMenuModule ],
+    ReactiveFormsModule, MatToolbarModule, MatTableModule, MatExpansionModule, MatSidenavModule, MatListModule, MatMenuModule, MatCardModule ],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ]
 })
