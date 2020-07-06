@@ -144,6 +144,11 @@ button {
   background-size: cover;
 }
 
+.example-header-image3 {
+  background-image: url('https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Puzzles_logo.png');
+  background-size: cover;
+}
+
 .hobby_left {
   float:left;
   width:33%;
