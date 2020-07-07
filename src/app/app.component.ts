@@ -75,8 +75,7 @@ export class AppComponent  {
   }
 
   GetUserData() {
-    this.http.get<any[1]>(this.apiUrl)
-      .subscribe(data => {
+    this.http.get<any[]>(this.apiUrl).(data => {
         this.users = data;
       });
   }
