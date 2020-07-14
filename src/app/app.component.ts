@@ -64,8 +64,6 @@ export class AppComponent  {
       {title: 'Puzzles', subtitle: 'Brainstorm', content: 'Since I prefer dealing with new challenges daily, I like solving complex puzzles where I can brainstorm and find the most efficient and fast way to get solution using my excellent problem solving ability.', url: 'https://cdn.jsdelivr.net/gh/Nick100395/angular-ivy-k2km14@master/src/Puzzle1.jpg'}
     ];
 
-  liked = 'LIKED';
-
   //API Call from another Website
   users = [];
   apiUrl = 'https://jsonplaceholder.typicode.com/users';
